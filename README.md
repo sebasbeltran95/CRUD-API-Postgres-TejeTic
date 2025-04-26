@@ -2,26 +2,102 @@
 
 ## TejeTic
 
-Se realiza catalogo de productos  en el  framework laravel 10, livewire 2, bootstrap y MySQL las instrucciones de despliegue son las siguientes:
+Se realiza API CRUD en el  framework laravel 10 y Postgres las instrucciones de despliegue son las siguientes:
 
-- Clonar el repositorio (https://github.com/sebasbeltran95/importadora-yanpo.git).
+- Clonar el repositorio (https://github.com/sebasbeltran95/CRUD-API-Postgres-TejeTic.git).
 - Descomprimir los archivos vendor.rar y .rar.
 - Realizar un composer update.
 - Ejecutar la migracion (php artisan migrate).
-- Entrar a base de datos en la tabla users puede crear el usuario con el que ingresara al aplicativo o puede ir a la siguiente  ruta dentro del proyecto (routes/web.php), dentro del archivo web encontrara la siguiente linea Auth::routes(['register' => false]);, lo que tiene que hacer es borrar lo quee sta dentro del parentesis Auth::routes(); y con esto se habilitara la ruta register, entrando a esta ruta puede crear los accesos para poder ingresar al aplicativo.
-- Para poder inicializar el servidor hacemos lo siguiente: abre el proyecto con visual studio code, luego se procede a abrir la terminar, se ingresa el comando php artisan serve, este comando arrojara la siguiente url http://127.0.0.1:8000, esta url se copia y se pega en el navegador de su preferencia, este paso se realiza despues de haber echo la migracion o de haberse importado la base de datos que se encuentra en el proyecto.
 
-## Vistas
 
-Para poder ingresar a la vista productos lo hacemos a traves de la siguiente URL /productos, en esta vista podemos encontrar un CRUD echo a traves de modales, en la tabla se evidenciara la siguiente informacion, prodcuto, imagen, codigo, descripcion, categoria, precio con iva, precio sin iva y la fecha en la que se creo. 
+## Documentacion
 
-Para poder ingresar a la vista categoria lo hacemos a traves de la siguiente URL /categoria,en esta vista podemos encontrar un CRUD echo a traves de modales, en la tabla se evidenciara la siguiente informacion, nombre_categoria y la fecha en la que se creo.
+Endpoint GET http://localhost:8000/api/get_his, muestra todos los registros
 
-Para poder ingresar a la vista dashbaord lo hacemos a traves de la siguiente URL /dashbaord,en esta vista podemos encontrar unas graficas.
+Respuesta
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "nombre_completo": "pepito",
+            "edad": 18,
+            "created_at": "2025-04-26T16:21:08.000000Z",
+            "updated_at": "2025-04-26T16:54:02.000000Z"
+        },
+        {
+            "id": 3,
+            "nombre_completo": "pepitoo",
+            "edad": 12,
+            "created_at": "2025-04-26T17:30:35.000000Z",
+            "updated_at": "2025-04-26T17:30:35.000000Z"
+        }
+    ]
+}
 
-Para poder ingresar a la vista perfil lo hacemos a traves de la siguiente URL /perfil,en esta vista podemos encontrar una plantilla que se asemeja al perfil que puede llevar un aplciativo, se puede editar la informacion, cambiar la contraseña y eliminar el perfil.
+Endpoint POST http://localhost:8000/api/search_his, consultar por registro
 
-Para poder ingresar a la vista usuarios lo hacemos a traves de la siguiente URL /usuarios, en la tabla se evidenciara la siguiente informacion, name_ email, rol, password y la fecha en la que se creo.
+{
+    "id":1
+}
+
+Respuesta
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "nombre_completo": "pepito",
+            "edad": 18,
+            "created_at": "2025-04-26T16:21:08.000000Z",
+            "updated_at": "2025-04-26T16:54:02.000000Z"
+        }
+    ]
+}
+
+Endpoint POST http://localhost:8000/api/post_his, insertar registros
+[
+    {
+        "nombre_completo": "pepitoo",
+        "edad": 12
+    }
+]
+
+Respuesta
+[
+    {
+        "nombre_completo": "pepitoo",
+        "edad": 12,
+        "updated_at": "2025-04-26T17:30:35.000000Z",
+        "created_at": "2025-04-26T17:30:35.000000Z",
+        "id": 3
+    }
+]
+
+Endpoint PUT http://localhost:8000/api/update_his, actualizar registros
+[
+    {
+        "id": 1,
+        "nombre_completo": "pepito",
+        "edad": 18
+    }
+]
+
+Respuesta
+[
+    {
+        "id": 1,
+        "nombre_completo": "pepito",
+        "edad": 18,
+        "created_at": "2025-04-26T16:21:08.000000Z",
+        "updated_at": "2025-04-26T16:54:02.000000Z"
+    }
+]
+
+Endpoint PUT http://localhost:8000/api/delete_his, eliminar registro
+{
+    "id": 2
+}
 
 
 ## License
