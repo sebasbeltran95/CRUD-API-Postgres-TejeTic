@@ -99,6 +99,12 @@ Endpoint PUT http://localhost:8000/api/delete_his, eliminar registro
     "id": 2
 }
 
+Respuesta
+{
+    "success": true,
+    "data": true
+}
+
 
 ## License
 
