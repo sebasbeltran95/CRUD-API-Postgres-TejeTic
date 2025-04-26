@@ -14,85 +14,84 @@ Se realiza API CRUD en el  framework laravel 10 y Postgres las instrucciones de 
 
 Endpoint GET http://localhost:8000/api/get_his, muestra todos los registros
 
-Respuesta
-{
-    "success": true,
-    "data": [
-        {
-            "id": 1,
-            "nombre_completo": "pepito",
-            "edad": 18,
-            "created_at": "2025-04-26T16:21:08.000000Z",
-            "updated_at": "2025-04-26T16:54:02.000000Z"
-        },
-        {
-            "id": 3,
-            "nombre_completo": "pepitoo",
-            "edad": 12,
-            "created_at": "2025-04-26T17:30:35.000000Z",
-            "updated_at": "2025-04-26T17:30:35.000000Z"
-        }
-    ]
-}
+Respuesta <br>
+{ <br>
+    "success": true, <br>
+    "data": [ <br>
+        { <br>
+            "id": 1, <br>
+            "nombre_completo": "pepito", <br>
+            "edad": 18, <br>
+            "created_at": "2025-04-26T16:21:08.000000Z", <br>
+            "updated_at": "2025-04-26T16:54:02.000000Z" <br>
+        }, <br>
+        { <br>
+            "id": 3, <br>
+            "nombre_completo": "pepitoo", <br>
+            "edad": 12, <br>
+            "created_at": "2025-04-26T17:30:35.000000Z", <br>
+            "updated_at": "2025-04-26T17:30:35.000000Z" <br>
+        } <br>
+    ] <br>
+} <br>
 
-Endpoint POST http://localhost:8000/api/search_his, consultar por registro
+Endpoint POST http://localhost:8000/api/search_his, consultar por registro <br>
+{ <br>
+    "id":1 <br>
+} <br>
 
-{
-    "id":1
-}
+Respuesta <br>
+{ <br>
+    "success": true, <br>
+    "data": [ <br>
+        { <br>
+            "id": 1, <br>
+            "nombre_completo": "pepito", <br>
+            "edad": 18, <br>
+            "created_at": "2025-04-26T16:21:08.000000Z", <br>
+            "updated_at": "2025-04-26T16:54:02.000000Z" <br>
+        } <br>
+    ] <br>
+} <br>
 
-Respuesta
-{
-    "success": true,
-    "data": [
-        {
-            "id": 1,
-            "nombre_completo": "pepito",
-            "edad": 18,
-            "created_at": "2025-04-26T16:21:08.000000Z",
-            "updated_at": "2025-04-26T16:54:02.000000Z"
-        }
-    ]
-}
+Endpoint POST http://localhost:8000/api/post_his, insertar registros <br>
+[ <br>
+    { <br>
+        "nombre_completo": "pepitoo", <br>
+        "edad": 12 <br>
+    } <br>
+] <br>
 
-Endpoint POST http://localhost:8000/api/post_his, insertar registros
-[
-    {
-        "nombre_completo": "pepitoo",
-        "edad": 12
-    }
-]
+Respuesta <br>
+[ <br>
+    { <br>
+        "nombre_completo": "pepitoo", <br>
+        "edad": 12, <br>
+        "updated_at": "2025-04-26T17:30:35.000000Z", <br>
+        "created_at": "2025-04-26T17:30:35.000000Z", <br>
+        "id": 3 <br>
+    } <br>
+] <br>
 
-Respuesta
-[
-    {
-        "nombre_completo": "pepitoo",
-        "edad": 12,
-        "updated_at": "2025-04-26T17:30:35.000000Z",
-        "created_at": "2025-04-26T17:30:35.000000Z",
-        "id": 3
-    }
-]
+Endpoint PUT http://localhost:8000/api/update_his, actualizar registros <br>
+[ <br>
+    { <br>
+        "id": 1, <br>
+        "nombre_completo": "pepito", <br>
+        "edad": 18 <br>
+    } <br>
+] <br>
 
-Endpoint PUT http://localhost:8000/api/update_his, actualizar registros
-[
-    {
-        "id": 1,
-        "nombre_completo": "pepito",
-        "edad": 18
-    }
-]
-
-Respuesta
-[
-    {
-        "id": 1,
-        "nombre_completo": "pepito",
-        "edad": 18,
-        "created_at": "2025-04-26T16:21:08.000000Z",
-        "updated_at": "2025-04-26T16:54:02.000000Z"
-    }
-]
+Respuesta <br>
+[ <br>
+    { <br>
+        "id": 1, <br>
+        "nombre_completo": "pepito", <br>
+        "edad": 18, <br>
+        "created_at": "2025-04-26T16:21:08.000000Z", <br>
+        "updated_at": "2025-04-26T16:54:02.000000Z"  <br>
+    } <br>
+] <br>
 
 Endpoint PUT http://localhost:8000/api/delete_his, eliminar registro <br>
 { <br>
@@ -110,7 +109,7 @@ Respuesta <br>
 
 Headers
 
-Key: Accept
+Key: Accept <br>
 Value: application/json
 
 
