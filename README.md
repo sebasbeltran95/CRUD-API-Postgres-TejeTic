@@ -94,16 +94,16 @@ Respuesta
     }
 ]
 
-Endpoint PUT http://localhost:8000/api/delete_his, eliminar registro
-{
-    "id": 2
-}
+Endpoint PUT http://localhost:8000/api/delete_his, eliminar registro <br>
+{ <br>
+    "id": 2 <br>
+} <br>
 
-Respuesta
-{
-    "success": true,
-    "data": true
-}
+Respuesta <br>
+{ <br>
+    "success": true, <br>
+    "data": true <br>
+} <br>
 
 
 ## Documentacion Postman
@@ -118,32 +118,27 @@ Value: application/json
 
 En el archivo .env se pone lo siguiente:
 
-DB_CONNECTION=pgsql
-
-DB_HOST=127.0.0.1
-
-DB_PORT=5432
-
-DB_DATABASE=nombre_de_tu_bd
-
-DB_USERNAME=tu_usuario
-
-DB_PASSWORD=tu_contraseña
+DB_CONNECTION=pgsql <br>
+DB_HOST=127.0.0.1 <br>
+DB_PORT=5432 <br>
+DB_DATABASE=nombre_de_tu_bd <br>
+DB_USERNAME=tu_usuario <br>
+DB_PASSWORD=tu_contraseña <br>
 
 
 En el archivo config/database.php
 
 'pgsql' => [ <br>
-    'driver' => 'pgsql',
-    'host' => env('DB_HOST', '127.0.0.1'),
-    'port' => env('DB_PORT', '5432'),
-    'database' => env('DB_DATABASE', 'forge'),
-    'username' => env('DB_USERNAME', 'forge'),
-    'password' => env('DB_PASSWORD', ''),
-    'charset' => 'utf8',
-    'prefix' => '',
-    'schema' => 'public',
-    'sslmode' => 'prefer',
+    'driver' => 'pgsql', <br>
+    'host' => env('DB_HOST', '127.0.0.1'), <br>
+    'port' => env('DB_PORT', '5432'), <br>
+    'database' => env('DB_DATABASE', 'forge'), <br>
+    'username' => env('DB_USERNAME', 'forge'), <br>
+    'password' => env('DB_PASSWORD', ''), <br>
+    'charset' => 'utf8', <br>
+    'prefix' => '', <br>
+    'schema' => 'public', <br>
+    'sslmode' => 'prefer', <br>
 ],
 
 
