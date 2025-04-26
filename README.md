@@ -133,7 +133,7 @@ DB_PASSWORD=tu_contraseña
 
 En el archivo config/database.php
 
-'pgsql' => [
+'pgsql' => [ <br>
     'driver' => 'pgsql',
     'host' => env('DB_HOST', '127.0.0.1'),
     'port' => env('DB_PORT', '5432'),
